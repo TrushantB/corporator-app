@@ -1,0 +1,607 @@
+
+// Color Variables 
+
+$primary:#ff8f2e; 
+$secondary: #008000;
+$tertiary: #e4e4e4;
+$gray: #f7f7f7;
+$white-color:#fff;
+$black-color: #000;
+$text-color: #333333;
+$border-color: #dee2e6;
+$twitter-bg-color: #1b95e0;
+
+// Font
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(../../fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: Montserrat-Medium;
+    src: url(../../fonts/Montserrat-Medium.ttf);
+  }
+@font-face {
+    font-family: Montserrat-SemiBold;
+    src: url(../../fonts/Montserrat-SemiBold.ttf);
+  }
+@font-face {
+    font-family: MMontserrat-Bold;
+    src: url(../../fonts/Montserrat-Bold.ttf);
+} 
+
+// Common CSS Here 
+
+*::after,
+*::before{
+    box-sizing: border-box;
+}  
+a{
+    text-decoration: none;
+}
+body{
+    font-family: Montserrat-Regular;
+    font-size: 14px;    
+    line-height: 2;
+    color: $text-color;
+}
+.bg-gray{
+    background-color: $gray;
+}
+::-webkit-scrollbar {
+    width: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $text-color;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+.card-content-md p{
+    line-height: 1.9;
+    font-family: Montserrat-Regular;
+}
+.page-title{
+    font-size: 24px;
+    color: $primary;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    font-family: Montserrat-Regular;
+        &:after{
+            content:'';
+            border-bottom: 3px solid $primary;
+            width: 50px;
+            display: block;
+            position: relative;
+            top: -5px;
+            margin: auto;                
+        }
+}
+.title-section{
+    padding-bottom: 12px;
+    .title{
+        font-family: Montserrat-Regular;
+        font-size: 22px;   
+        color: $primary;
+        font-weight: 800;
+        text-align: center;
+            &:after{
+                content:'';
+                border-bottom: 3px solid $primary;
+                width: 50px;
+                padding: 3px 0;
+                display: block;
+                margin: auto;                
+            }
+    }
+}
+.split-pane-side{
+    .item-label{
+        .md.hydrated{
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: 10px;
+            font-family: Montserrat-Regular;
+        }
+        
+    }
+}
+.icon-inner, 
+svg{
+    color:$primary;
+}
+.full-button{
+    color: $white-color;
+    font-family: Montserrat-Regular;
+}
+.heading{
+    font-size: 18px;
+    font-weight: 800;
+    color: $text-color;
+    line-height: 1.9;
+    text-transform: capitalize;
+}
+.read-more-button,
+.button-native{
+    --background: $gray;
+    color: $primary;
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-top: 10px;
+    --min-height: 24px;
+    --border-color: transparent;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: Montserrat-Regular;
+}
+.date{
+    font-family: Montserrat-Regular;
+    line-height: 1.9;
+    font-size: 12px;
+    color: $black-color;
+    font-weight: 600;
+}
+.sm-heading{
+    font-family: Montserrat-Regular;
+    line-height: 1.4;
+    font-size: 17px;
+    color: $text-color;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+ion-title{
+    font-family: Montserrat-Regular;
+}
+.header{
+    padding-left: 0;
+    color: $white-color;
+    .candidate-bar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: Montserrat-Regular;
+            .logo{
+                a{
+                    display: flex;
+                    align-items: center;
+                }
+            }
+    }
+}
+
+// Breadcrumbs css here 
+
+.breadcrumbs{
+    .breadcrumbs-menu{
+        padding-left: 24px;
+        margin: 13px 0px 0;
+        .breadcrumbs-item{
+            list-style: none;
+            margin-left: 4px;
+            display: inline-block;
+                a{
+                    font-family: Montserrat-Regular;
+                }
+                .s-ion-icon{
+                    height: 17px;
+                    width: auto;
+                    position: relative;
+                    top: 3px;
+                    padding-right: 3px;
+                }
+        }
+    }
+}
+
+// Search bar css here
+
+.search-bar{
+    ion-searchbar{
+        padding: 20px 15px 2px;
+        .searchbar-input.sc-ion-searchbar-md{    
+            display: block;
+            font-family: Montserrat-Regular;
+            color: $primary;
+            box-shadow: none;
+            position: relative;
+            border: 1px solid $primary;
+            border-radius: 4px;
+        }
+    }
+}
+
+// menu css here 
+
+ion-menu {
+    --ion-background-color: var(--ion-color-primary);
+    --ion-text-color: var(--ion-color-secondary-contrast);
+
+    ion-toolbar {
+        --background: var(--ion-color-primary);
+    } 
+    .list-md{
+        padding-top: 4px;
+        min-height: 500px;
+        position: relative;
+        overflow: scroll;
+    }
+    ion-menu-toggle:last-of-type{
+        ion-item{
+            border-bottom: 0;
+        }
+    }
+    ion-item{
+        --border-color: $white-color;
+        height: 42px;
+        border-bottom: 1px solid #ffffff4a;
+        vertical-align: middle;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    ion-icon{
+        color: $white-color;
+    }
+    ion-list { 
+        background: transparent;
+    }
+     .info{
+         position: fixed;
+         bottom: 0;
+         width: 100%;
+        .logo{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            background: green;
+            bottom: 0;
+            padding-top: 16px;
+            padding-bottom: 5px;
+            .party-name{
+                text-align: center;
+                font-size: 16px;
+                font-family: Montserrat-Regular;
+                margin: 0;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+// Home page css  here
+
+.home-page{
+    .read-more-button{
+        background: $primary;
+        display: inline-block;
+        margin-left: 16px;
+        color: $white-color;
+        border-radius: 4px;
+        margin-top: 0;
+    }
+    .hydrated.about-us{
+        margin: 12px 15px 15px;
+        padding-bottom: 10px;
+        box-shadow: -1px -3px 49px -1px rgba(0, 0, 0, 0.11);
+        .title-section{
+            padding-bottom: 3px;
+            .cadidate-name{
+                color: $primary;
+                font-family: Montserrat-Regular;    
+                font-size: 16px;
+            }
+            .title{
+                text-align: left;
+                color: $text-color;
+                font-size: 20px;
+                margin-top: 10px;
+                    &:after{
+                        content: '';
+                        border-bottom: 0;
+                    }
+            }
+        }
+    }
+    .grid-section{
+        margin: 12px 15px 15px;        
+            .column-section{
+                background: $secondary;
+                border-radius: 5px;
+                color: $white-color;
+                display: flex;
+                margin: 0 10px;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                    .icon{
+                        height: 35px;
+                        width: 35px;
+                    }
+            }
+            .title{
+                color: $white-color;
+                margin-top: 5px;
+                font-size: 16px;
+                font-family: Montserrat-Regular;  
+                line-height: 22px;
+            }       
+    }    
+}
+
+// About page css here 
+
+.about-page{
+    .profile-image{
+        padding: 10px 15px 0;
+    }
+    .about-content{
+        padding: 0 15px 15px;
+        font-family: Montserrat-Regular;
+        line-height: 1.9;
+            p{
+                margin: 0;
+                text-align: justify;
+                margin-top: 5px;
+            }
+    }
+    .sm-heading{
+        padding: 10px 0 4px;
+        border-bottom: 2px solid $primary;
+    }
+}
+
+// gallery page css here 
+
+.gallery-page{
+    .page-title{
+        margin-top: 0;
+        padding: 8px;
+    }
+    .gallery{
+        .gallery-images{
+            padding: 5px 0 15px;
+            .image{
+                padding-bottom: 0px;
+            }
+            ion-col{
+                padding-bottom: 0;
+            }
+            .section{
+                padding-top:0;
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+// Social  page CSS here 
+.social-work-detail{
+    .card {
+        .card-wrapper {
+            .card-content-md.card-text{
+                border-left: 0px;
+                padding: 0;
+            }
+        }
+    }
+    ion-col{
+        padding: 0 5px;
+    }
+    .title{
+        font-family: Montserrat-Regular;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+}
+.social-page{
+    .card{
+        .card-wrapper{
+            margin: 12px 15px 15px;
+            padding: 15px;
+            box-shadow: -1px -3px 49px -1px rgba(0, 0, 0, 0.11);
+                .card-header{
+                    padding-left: 0;
+                }
+                .card-text{
+                    padding: 0 14px;
+                    border-left: 2px solid $primary;
+                }
+        }
+        .sm-heading{
+            line-height: 1.5;
+        }
+    }    
+}   
+
+// register compalint-page
+
+.content-wrapper{
+    padding: 15px;
+        p{
+             font-family: Montserrat-Regular;
+             font-size: 14px;
+             text-align: center;
+             margin-top: 8px;   
+             padding: 0 20px;
+        }
+
+        .input{
+            --padding-top: 2px;
+            font-family: Montserrat-Regular;
+        }
+        .label{
+            font-size: 14px;
+            font-family: Montserrat-Regular;
+        }
+        .item-has-focus{
+            .label{
+                font-size: 16px;
+            }
+        }
+        .form-wrapper{
+            box-shadow: -4px 7px 20px -2px rgba(0, 0, 0, 0.15);
+            padding: 22px;
+            margin: 15px;
+                .full-button{
+                    margin-top: 20px;
+                }
+                .sm-heading{
+                    text-align: left;
+                    font-size: 20px;
+                    margin-bottom: 0;
+                    padding: 0 0 6px;
+                    border-bottom: 3px solid $primary;
+                }
+        }    
+}
+
+// Contact page css here 
+
+.contact-page{
+    .sm-heading{
+        text-align: left;
+        font-size: 20px;
+        padding: 0 0 6px;
+        margin-bottom: 20px;
+        color: $primary;
+        border-bottom: 3px solid $primary;
+    }
+    .icon{
+        font-size: 18px;
+        margin-right: 3px;
+        color: $text-color;
+    }
+    .contact-wrapper{
+        box-shadow: -4px 7px 20px -2px rgba(0, 0, 0, 0.15);
+        padding: 15px 22px 22px;
+        margin: 15px;
+            p{
+              text-align: left;
+              padding: 0;  
+              margin-top: -4px;
+              font-family: Montserrat-Regular;
+            }    
+            h4{
+              font-family: Montserrat-Regular;
+              font-size: 18px;  
+              font-weight: 800;
+              margin-top: 20px;
+              color: $black-color;
+            }    
+            a{
+                font-size: 14px;
+                color: $text-color;
+                font-family: Montserrat-Regular;
+            }     
+    }
+    .follow-section{
+        a{
+            .icon{
+                font-size: 30px;
+                margin-right: 20px; 
+                color: $text-color;
+            }          
+        }      
+    } 
+}
+
+// Emergency Contact page css here 
+
+.emergency-contact {
+    .sm-heading{
+        margin-bottom: 0;
+        margin-top: 20px;
+        letter-spacing: 1px;
+    } 
+    .icon{
+        font-size: 19px;
+    }
+    .table{
+        width: 100%;
+            th{
+                border-bottom: 2px solid $border-color;
+                font-size: 14px;
+                font-family: Montserrat-Regular;
+                padding: 12px;  
+                text-align: left;
+            }
+            td{
+                border-top: 2px solid $border-color;
+                font-size: 14px;
+                font-family: Montserrat-Regular;
+                padding: 12px;
+                    a{
+                        color: $text-color;
+                    }
+            }
+    }
+    .sm-heading {
+        background: #e4e4e4;
+        color: #000;
+        padding: 12px; 
+    }
+    .hospital-no,
+    .police-no{
+        margin: 15px;
+        -webkit-box-shadow: -1px -3px 49px -1px rgba(0, 0, 0, 0.11);
+        -moz-box-shadow: -1px -3px 49px -1px rgba(0, 0, 0, 0.11);
+        box-shadow: -1px -3px 49px -1px rgba(0, 0, 0, 0.11);
+    }
+}
+
+// Language page css here 
+
+.language-page{
+    ion-content{
+        --background: #f7f7f7;
+    }
+    .wrapper{
+        font-family: Montserrat-Regular;  
+        .cadidate-info{
+            padding-top: 25px;
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-bottom: 1px solid $primary;
+            .cadidate-image{      
+                height: 200px;
+                width: 200px;
+                img{
+                    border-radius: 50%;
+                    height: 200px;
+                    width: 200px;
+                }
+            }
+        }
+        .select-language{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 10px;
+            padding-bottom: 30px;
+                .language{
+                    margin-top: 15px;
+                    display: flex;
+                    .laguage-button{
+                        background: $primary;
+                        color: $white-color;
+                        padding: 5px 24px;
+                        border-radius: 5px;
+                        margin: 0 10px;
+                    }
+                }
+        }
+        h2,h3,h5,h6{
+            margin-top: 14px;
+            margin-bottom: 0;
+        }
+    }    
+}
