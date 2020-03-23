@@ -22,7 +22,6 @@ import { environment } from '../environments/environments';
       <Query query={aboutUS_Query} id={null}>
       {(data:any) => {
         let aboutUsData=data.data.aboutuses[0];
-        console.log(aboutUsData)
           return (
             <IonPage className="about-page">
               <IonHeader >

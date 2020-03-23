@@ -21,7 +21,7 @@ import { useQuery } from '@apollo/react-hooks';
      const [ pstationData, setpstationData ] = useState([]);
      const { loading, error, data } = useQuery(emergancyContact_Query);
      
-     if(!hospitalData.length && !loading){
+     if(!pstationData.length && !hospitalData.length && !loading){
        sethospitalData(data.emergencyContacts[0].Hospitals);
        setpstationData(data.emergencyContacts[0].pstation)
      } 
@@ -53,7 +53,7 @@ import { useQuery } from '@apollo/react-hooks';
                 <div className="search-bar">
                   <IonSearchbar showCancelButton="focus" onIonChange={(e:any) => {
                    let hospital=emergencyContactData.Hospitals.filter((res:any) => {
-                     return res.Name.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase());
+                     return res.name.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase());
                     })
                     let pstation=emergencyContactData.pstation.filter((res:any) => {
                       return res.name.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase());
@@ -78,7 +78,7 @@ import { useQuery } from '@apollo/react-hooks';
                         hospitalData.map((item:any,index:number) => {
                           return (
                             <tr key={index}>
-                            <td>{item.Name}</td>
+                            <td>{item.name}</td>
                             <td><a href={`tel:${item.mobile_no}`}>+91 {item.mobile_no}</a></td>
                           </tr>
                           )
@@ -128,7 +128,7 @@ import { useQuery } from '@apollo/react-hooks';
   query {
     emergencyContacts {
       Hospitals {
-        Name
+        name:Name
         mobile_no
       }
       pstation {

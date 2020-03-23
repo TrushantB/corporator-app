@@ -102,9 +102,9 @@ const App: React.FC = () => (
           <Route path="/register-complaint" component={RegisterComplaint}/>
           <Route path="/emergancy-contact" component={EmergancyContact}/>
           <Route path="/contact-us" component={Contact}/>
-          <Route path="/social-work-details" component={SocialWorkDetails}/>
+          <Route path="/social-work-details/:id" component={SocialWorkDetails}/>
           <Route path="/latest-news-details" component={LatestNewsDetails}/>
-          <Route path="/recent-activity-details" component={RecentActivityDetails}/>
+          <Route path="/recent-activity-details/:id" component={RecentActivityDetails}/>
           <Route path="/" render={() => <Redirect to="/language"/> } exact={true} />
           <Route path="/language" component={Language} exact={true}/>
         </IonRouterOutlet>

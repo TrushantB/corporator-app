@@ -30,7 +30,6 @@ import { environment  } from "../environments/environments";
       <Query query={gallery_Query} id={null}>
       {(data:any) => {
         let galleriesData=data.data.galleries[0];
-          console.log(galleriesData)
           return (
             <IonPage className="gallery-page">
               <IonHeader >
